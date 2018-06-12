@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new
+
   end
 
   def create
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = @user.try(:authenticate, params[:user][:password])
     return redirect_to login_path unless @user
     session[:user_id] = @user.id
-    redirect_to "/"
+    redirect_to user_path(@user)
   end
 
 

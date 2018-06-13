@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'users#index'
   get '/login' => 'sessions#new'
-  get '/auth/facebook/callback' => 'sessions#create'
   post '/login' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#create'
   resources :users
   resources :locations
   resources :events

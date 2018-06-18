@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    flash[:notice] = "Make sure passwords match and/or email is correct."
     @user = User.new(user_params)
     return redirect_to new_user_path unless @user.save
     session[:user_id] = @user.id

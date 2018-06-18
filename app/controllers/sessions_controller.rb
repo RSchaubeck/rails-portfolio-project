@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    flash[:notice] = 'Email or password is incorrect.'
     if auth
       @user = User.find_or_create_by(uid: auth['uid']) do |u|
         u.first_name = get_name(auth['info']['name'])[0]
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by(email: params[:user][:email])
       @user = @user.try(:authenticate, params[:user][:password])
+      return redirect_to login_path unless @user
     end
 
     session[:user_id] = @user.id

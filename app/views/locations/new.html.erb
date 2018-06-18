@@ -1,0 +1,20 @@
+<h1>Add Location</h1>
+
+<%= form_for :location, url: '/locations' do |f| %>
+  <label>Name:</label><br>
+  <%= f.text_field :name %>
+  <br><br>
+  <label>Address:</label><br>
+  <%= f.text_field :address %>
+  <br><br>
+  <label>City:</label><br>
+  <%= f.text_field :city %>
+  <br><br>
+  <label>State:</label><br>
+  <%= f.text_field :state %>
+  <br><br>
+  <label>Zip Code:</label><br>
+  <%= f.text_field :zip_code %>
+  <br><br>
+  <%= f.submit %>
+<% end %>

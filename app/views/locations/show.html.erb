@@ -1,0 +1,7 @@
+<font color="green"><%= flash[:success] %></font>
+
+<h1><%= @location.name.titleize %></h1>
+<ul>
+  <li><%= @location.address %></li>
+  <li><%= @location.city.titleize %>, <%= @location.state.titleize %></li>
+</ul>

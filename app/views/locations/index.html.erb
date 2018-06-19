@@ -1,0 +1,9 @@
+<% @locations.each do |l| %>
+  <div>
+    <h1><%= l.name.titleize %></h1>
+    <ul>
+      <li><%= l.address %></li>
+      <li><%= l.city.titleize %>, <%= l.state.titleize %></li>
+    </ul>
+  </div>
+<% end %>

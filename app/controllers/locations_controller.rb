@@ -1,6 +1,10 @@
 class LocationsController < ApplicationController
   before_action :require_login, only: [:new]
 
+  def index
+    @locations = Location.all
+  end
+
   def new
   end
 
@@ -12,6 +16,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    flash[:success] = "You have successfully added this location!"
   end
 
   private

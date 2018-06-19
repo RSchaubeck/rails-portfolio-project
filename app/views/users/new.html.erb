@@ -1,6 +1,7 @@
 <h1>Signup</h1>
 
 <font color="red"><p id="notice"><%= notice %></p></font>
+
 <%= form_for :user, url: '/users' do |f| %>
   <label>First Name:</label><br>
   <%= f.text_field :first_name %>

@@ -1,0 +1,9 @@
+<h1>Events</h1>
+
+<% @events.each do |e| %>
+  <h1><%=link_to e.name, event_path(e) %></h1>
+  <p><%= e.start - e.end %></p>
+<% end %>
+
+<br>
+<%= link_to "Add new event", new_event_path %>

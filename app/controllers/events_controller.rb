@@ -13,13 +13,20 @@ class EventsController < ApplicationController
     end
   end
 
-  def new
+  def show
+    if params[:location_id]
+      @location = Location.find_by(id: params[:location_id])
+      @event = @location.songs.find_by(id: params[:id])
+      if @event.nil?
+        flash[:alert] = "Event not found."
+        redirect_to location_events_path(@location)
+      end
+    else
+      @event = Event.find(params[:id])
+    end
   end
 
   def create
   end
 
-  def show
-
-  end
 end

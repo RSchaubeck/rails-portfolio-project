@@ -1,0 +1,14 @@
+<h1>Add Event</h1>
+
+<%= form_for :event, url: '/events' do |f| %>
+  <label>Name:</label><br>
+  <%= f.text_field :name %>
+  <br><br>
+  <label>Start Time:</label><br>
+  <%= f.text_field :start_time %>
+  <br><br>
+  <label>End Time:</label><br>
+  <%= f.text_field :end_time %>
+  <br><br>
+  <%= f.submit %>
+<% end %>

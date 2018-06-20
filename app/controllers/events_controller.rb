@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def show
     if params[:location_id]
       @location = Location.find_by(id: params[:location_id])
-      @event = @location.songs.find_by(id: params[:id])
+      @event = @location.events.find_by(id: params[:id])
       if @event.nil?
         flash[:alert] = "Event not found."
         redirect_to location_events_path(@location)
@@ -27,6 +27,13 @@ class EventsController < ApplicationController
   end
 
   def create
+
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :start, :end)
   end
 
 end

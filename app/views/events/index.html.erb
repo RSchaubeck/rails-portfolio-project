@@ -1,8 +1,11 @@
 <h1>Events</h1>
 
 <% @events.each do |e| %>
-  <h1><%=link_to e.name, event_path(e) %></h1>
-  <p><%= e.start - e.end %></p>
+  <h1><%=link_to e.name.titleize, event_path(e) %></h1>
+  <ul>
+    <li><%= e.day %></li>
+    <li><%= e.time %></li>
+  </ul>
 <% end %>
 
 <br>

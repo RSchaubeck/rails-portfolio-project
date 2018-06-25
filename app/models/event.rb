@@ -6,4 +6,14 @@ class Event < ActiveRecord::Base
 
   attr_accessor :location_name
 
+  def day
+    self.start.strftime('%v')
+  end
+
+  def time
+    time1 = self.start.strftime('%r')
+    time2 = self.end.strftime('%r')
+    "#{time1} - #{time2}"
+  end
+
 end

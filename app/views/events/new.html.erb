@@ -4,14 +4,28 @@
   <label>Name:</label><br>
   <%= f.text_field :name %>
   <br><br>
-  <label>Start:</label><br>
-  <%= f.text_field :start %>
-  <br><br>
-  <label>End:</label><br>
-  <%= f.text_field :end %>
-  <br><br>
   <label>Location Name:</label><br>
   <%= f.text_field :location_name %>
+  <br>
+
+  <h4>Date of Event:</h4>
+  <label>Month</label>
+  <%= f.select(:month, options_for_select((1..12).to_a)) %>
+  <label>Day</label>
+  <%= f.select(:day, options_for_select((1..31).to_a)) %>
+  <label>Year</label>
+  <%= f.select(:year, options_for_select((2018..2050).to_a)) %><br>
+
+  <h4>Time of Event:</h4>
+  <label>Starts: Hour</label>
+  <%= f.select(:start_hour, options_for_select((0..24).to_a)) %>
+  <label>Minutes</label>
+  <%= f.select(:start_minutes, options_for_select((0..59).to_a)) %>
+  <p></p>
+  <label>Ends: Hour</label>
+  <%= f.select(:end_hour, options_for_select((0..24).to_a)) %>
+  <label>Minutes</label>
+  <%= f.select(:end_minutes, options_for_select((0..59).to_a)) %>
   <br><br>
   <%= f.submit %>
 <% end %>

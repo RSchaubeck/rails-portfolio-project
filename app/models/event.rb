@@ -17,8 +17,8 @@ class Event < ActiveRecord::Base
     sm = self.start_minutes
     eh = self.end_hour
     em = self.end_minutes
-    self.start = "#{y}-#{m}-#{d} #{sh}:#{sm}:00".to_datetime
-    self.end = "#{y}-#{m}-#{d} #{eh}:#{em}:00".to_datetime
+    self.start = "#{y}-#{m}-#{d} #{sh}:#{sm}:00"
+    self.end = "#{y}-#{m}-#{d} #{eh}:#{em}:00"
   end
 
   def day

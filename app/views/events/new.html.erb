@@ -5,7 +5,7 @@
   <%= f.text_field :name %>
   <br><br>
   <label>Location Name:</label><br>
-  <%= f.text_field :location_name %>
+  <%= f.collection_select(:event, Location.all, :id, :capitalized_names, {include_blank: "Select Location"}) %>
   <br>
 
   <h4>Date of Event:</h4>

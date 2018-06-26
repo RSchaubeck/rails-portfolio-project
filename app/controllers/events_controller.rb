@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
   def index
     if params[:location_id]
-      location = Location.find_by(id: params[:location_id])
-        if location.nil?
-          flash[:alert] = "Location not found."
+      @location = Location.find_by(id: params[:location_id])
+        if @location.events.empty?
+          flash[:alert] = "This location has no events."
           redirect_to locations_path
         else
-          @events = location.events
+          @events = @location.events
         end
     else
       @events = Event.all
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :location_name, :month, :day, :year, :start_hour, :start_minutes, :end_hour, :end_minutes)
+    params.require(:event).permit(:name, :location_name, :month, :day, :year, :start_hour, :start_minutes, :end_hour, :end)
   end
 
 end

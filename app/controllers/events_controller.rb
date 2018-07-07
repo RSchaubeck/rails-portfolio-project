@@ -17,15 +17,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    location = Location.find_by(name: params[:event][:location_name])
-    if location.nil?
-      redirect_to new_location_path
-    else
-      @event = Event.new(event_params)
-      @event.location_id = location.id
-      return redirect_to new_event_path unless @event.save!
-      redirect_to event_path(@event)
-    end
+    location = Location.find(params[:event][:location])
+    @event = Event.new(event_params)
+    @event.location_id = location.id
+    return redirect_to new_event_path unless @event.save!
+    redirect_to event_path(@event)
   end
 
   def show
@@ -46,7 +42,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :location_name, :month, :day, :year, :start_hour, :start_minutes, :end_hour, :end)
+    params.require(:event).permit(:name, :location, :month, :day, :year, :start_hour, :start_minutes, :end_hour, :end_minutes)
   end
 
 end

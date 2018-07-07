@@ -3,13 +3,14 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
+    console 
   end
 
   def new
   end
 
   def create
-    @location = Location.new(location_params)
+    @location = Location.create(location_params)
     return redirect_to new_location_path unless @location.save
     redirect_to location_path(@location)
   end

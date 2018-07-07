@@ -3,5 +3,5 @@
 <ul>
   <%= @location.events.each do |e| %>
     <li><%= link_to e.name, location_event_path(@location, e) %></li>
-  <% end %>  
+  <% end %>
 </ul>

@@ -3,8 +3,8 @@
 <% @events.each do |e| %>
   <h1><%=link_to e.name.titleize, event_path(e) %></h1>
   <ul>
-    <li><%= e.day %></li>
-    <li><%= e.time %></li>
+    <li><%= e.start %></li>
+    <li><%= e.end_time %></li>
   </ul>
 <% end %>
 

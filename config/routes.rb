@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   root 'users#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
 
   resources :users
   resources :locations
   resources :events
-  
+
   resources :locations, only: [:show] do
     resources :events, only: [:show, :index]
   end

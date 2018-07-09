@@ -1,5 +1,7 @@
 <h1>Add Event</h1>
 
+<font color="red"><%= flash[:alert] %></font><br><br>
+
 <%= form_for :event, url: '/events' do |f| %>
   <label>Name:</label><br>
   <%= f.text_field :name %>
@@ -8,10 +10,10 @@
   <%= collection_select(:event, :location, Location.all, :id, :capitalized_names, {include_blank: "Select Location"}) %>
   <br><br>
   <label>Start Date & Time:</label><br>
-  <%= f.datetime_select :start %>
+  <%= f.datetime_select(:start, start_year: 2018, ampm: true) %>
   <br><br>
   <label>End Date & Time:</label><br>
-  <%= f.datetime_select :end_time %>
+  <%= f.datetime_select(:end_time, start_year: 2018, ampm: true) %>
   <br><br>
   <%= f.submit %>
 <% end %>

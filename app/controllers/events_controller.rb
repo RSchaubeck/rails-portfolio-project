@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
+
   def index
     if params[:location_id]
       @location = Location.find_by(id: params[:location_id])
         if @location.events.empty?
-          flash[:alert] = "This location has no events."
-          redirect_to locations_path
+          flash[:alert] = "This location has no events. Please add one below."
+          redirect_to new_event_path
         else
           @events = @location.events
         end

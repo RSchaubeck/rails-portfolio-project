@@ -5,6 +5,7 @@
   <ul>
     <li><%= e.start %></li>
     <li><%= e.end_time %></li>
+    <li><%= distance_of_time_in_words(e.start, e.end_time).capitalize %></li>
   </ul>
 <% end %>
 

@@ -5,3 +5,5 @@
     <li><%= link_to e.name, location_event_path(@location, e) %></li>
   <% end %>
 </ul>
+
+<%= link_to "Add events for this location", new_event_path %>

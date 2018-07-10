@@ -1,7 +1,7 @@
 <h1>Events</h1>
 
 <% @events.each do |e| %>
-  <h1><%=link_to e.name.titleize, event_path(e) %></h1>
+  <h2><%=link_to e.name.titleize, event_path(e) %></h2>
   <ul>
     <li><%= e.readable_time(e.start) %></li>
     <li><%= e.readable_time(e.end_time) %></li>

@@ -1,14 +1,16 @@
 <% console %>
 <h1><%= @event.name %></h1>
 
-<h3>Where:</h3>
-  <ul>
-    <li><%= @location.name %></li>
-    <li><%= @location.address %>, <%= @location.city %> - <%= @location.zip_code %></li>
-  </ul>
+  <h3>Where:</h3>
+    <ul>
+      <li><%= link_to @location.name.titleize, locations_path(@location) %></li>
+      <li><%= @location.address %>, <%= @location.city %> - <%= @location.zip_code %></li>
+    </ul>
   <h3>When:</h3>
     <ul>
       <li><%= @event.readable_time(@event.start) %></li>
       <li><%= @event.readable_time(@event.end_time) %></li>
       <li><%= distance_of_time_in_words(@event.start, @event.end_time).capitalize %></li>
     </ul>
+
+<%= link_to "Return Home", root_path %>

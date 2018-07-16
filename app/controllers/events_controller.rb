@@ -27,9 +27,6 @@ class EventsController < ApplicationController
     else
       render :new
     end
-#    @event.location_id = location.id
-#    return redirect_to new_event_path unless @event.save!
-#    redirect_to event_path(@event)
   end
 
   def show

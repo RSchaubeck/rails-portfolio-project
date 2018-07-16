@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-
+  before_action :require_login, only: [:new]
   def index
     @locations = Location.all
   end
@@ -25,6 +25,10 @@ class LocationsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:name, :address, :city, :state, :zip_code)
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 
 end

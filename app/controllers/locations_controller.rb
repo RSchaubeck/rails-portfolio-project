@@ -1,5 +1,4 @@
 class LocationsController < ApplicationController
-#  before_action :require_login, only: [:new]
 
   def index
     @locations = Location.all
@@ -26,15 +25,6 @@ class LocationsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:name, :address, :city, :state, :zip_code)
-  end
-
-  def require_login
-    if session[:user_id]
-      render "locations/new"
-    else
-      flash[:error] = "You must be logged in."
-      redirect_to login_path
-    end
   end
 
 end

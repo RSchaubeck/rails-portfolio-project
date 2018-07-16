@@ -1,5 +1,19 @@
 <h1>Add Event</h1>
 
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h3>
+      <%= pluralize(@event.errors.count, "error") %>
+      prevented this event from being saved:
+    </h3>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><font color="red"><%= msg %></font></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <font color="red"><%= flash[:alert] %></font><br>
 
 <%= form_for :event, url: '/events' do |f| %>

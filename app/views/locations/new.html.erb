@@ -1,6 +1,20 @@
 <h1>Add Location</h1>
 
-<%= form_for :location do |f| %>
+<% if @location.errors.any? %>
+  <div id="error_explanation">
+    <h3>
+      <%= pluralize(@location.errors.count, "error") %>
+      prevented this location from being saved:
+    </h3>
+    <ul>
+    <% @location.errors.full_messages.each do |msg| %>
+      <li><font color="red"><%= msg %></font></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for :location, url: '/locations' do |f| %>
   <label>Name:</label><br>
   <%= f.text_field :name %>
   <br><br>

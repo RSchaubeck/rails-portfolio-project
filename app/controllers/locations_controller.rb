@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :require_login, only: [:new]
+#  before_action :require_login, only: [:new]
 
   def index
     @locations = Location.all
@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     if @location.save
-      redirect_to @location
+      redirect_to location_path(@location)
     else
       render :new
     end

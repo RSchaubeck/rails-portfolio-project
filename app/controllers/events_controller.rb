@@ -15,14 +15,21 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
   end
 
   def create
     location = Location.find(params[:event][:location])
     @event = Event.new(event_params)
     @event.location_id = location.id
-    return redirect_to new_event_path unless @event.save!
-    redirect_to event_path(@event)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render :new
+    end
+#    @event.location_id = location.id
+#    return redirect_to new_event_path unless @event.save!
+#    redirect_to event_path(@event)
   end
 
   def show

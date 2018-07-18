@@ -23,6 +23,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.location_id = location.id
     if @event.save
+      EventsUser.create(event_id: @event.id)
       redirect_to event_path(@event)
     else
       render :new
@@ -44,7 +45,8 @@ class EventsController < ApplicationController
 #    end
   end
 
-
+  def rsvp
+  end
 
   private
 

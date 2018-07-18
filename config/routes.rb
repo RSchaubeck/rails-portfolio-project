@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   get '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
+  post '/rsvp' => 'events#rsvp'
 
   resources :users
   resources :locations

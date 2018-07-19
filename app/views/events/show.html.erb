@@ -13,6 +13,6 @@
       <li><%= distance_of_time_in_words(@event.start, @event.end_time).capitalize %></li>
     </ul>
 
-<%= link_to "RSVP to this event", {controller: 'events', action: 'rsvp', method: 'post'}, data: {confirm: "Are you sure you want to RSVP to #{@event.name.titleize} at #{@location.name.titleize}?"} %>
+<%= button_to "RSVP", event_rsvp_index_path(@event), data: {confirm: "Are you sure you want to RSVP to #{@event.name.titleize} at #{@location.name.titleize}?"} %>
 <br><br>
 <%= link_to "Return Home", root_path %>

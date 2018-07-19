@@ -33,19 +33,17 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @location = Location.find(@event.location_id)
-#    if params[:location_id]
-#      @location = Location.find_by(id: params[:location_id])
-#      @event = @location.events.find_by(id: params[:id])
-#      if @event.nil?
-#        flash[:alert] = "Event not found."
-#        redirect_to location_events_path(@location)
-#      end
-#    else
-#      @event = Event.find(params[:id])
-#    end
   end
 
   def rsvp
+    if session[:user_id]
+      event = EventsUser.find_by(event_id: params[:event_id])
+      event.user_id = session[:user_id]
+      event.save
+      redirect_to user_path(session[:user_id])
+    else
+      redirect_to login_path
+    end
   end
 
   private

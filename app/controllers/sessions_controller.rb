@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  include UsersHelper
+
   def new
   end
 
@@ -7,8 +9,8 @@ class SessionsController < ApplicationController
     flash[:notice] = 'Email or password is incorrect.'
     if auth
       @user = User.find_or_create_by(uid: auth['uid']) do |u|
-        u.first_name = get_name(auth['info']['name'])[0]
-        u.last_name = get_name(auth['info']['name'])[1]
+        u.first_name = get_first_name(auth['info']['name'])
+        u.last_name = get_last_name(auth['info']['name'])
         u.email = auth['info']['email'].downcase
       end
     else

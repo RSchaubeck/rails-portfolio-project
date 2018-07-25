@@ -1,0 +1,8 @@
+<% @events.each do |e| %>
+  <h2><%=link_to e.name.titleize, event_path(e) %></h2>
+  <ul>
+    <li><%= e.readable_time(e.start) %></li>
+    <li><%= e.readable_time(e.end_time) %></li>
+    <li><%= distance_of_time_in_words(e.start, e.end_time).capitalize %></li>
+  </ul>
+<% end %>

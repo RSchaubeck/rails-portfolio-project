@@ -15,8 +15,12 @@ class Event < ActiveRecord::Base
     time_attr.strftime('%A, %d %b %Y %l:%M %p')
   end
 
-#  def popular_events
-#    popular_ids = EventsUser.order("event_id ASC").limit(5)
-#  end
+  def self.pop_events
+    popular_ids = EventsUser.group(:event_id).order('count_all DESC').limit(5).count
+    event_keys = popular_ids.keys
+    pop_events = event_keys.collect do |e|
+      Event.find(e.to_i)
+    end
+  end
 
 end

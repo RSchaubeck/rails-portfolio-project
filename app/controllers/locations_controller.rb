@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
+    console
   end
 
   def new

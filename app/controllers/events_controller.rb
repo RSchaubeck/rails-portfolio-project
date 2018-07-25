@@ -46,6 +46,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def popular_events
+    @events = Event.pop_events
+  end
+
   private
 
   def event_params

@@ -23,7 +23,6 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.location_id = location.id
     if @event.save
-      EventsUser.create(event_id: @event.id)
       redirect_to event_path(@event)
     else
       render :new
@@ -37,9 +36,10 @@ class EventsController < ApplicationController
 
   def rsvp
     if session[:user_id]
-      event = EventsUser.find_by(event_id: params[:event_id])
-      event.user_id = session[:user_id]
-      event.save
+      event_rsvp = EventsUser.create(event_id: params[:event_id]) do |eu|
+        eu.user_id = session[:user_id]
+      end
+      event_rsvp.save
       redirect_to user_path(session[:user_id])
     else
       redirect_to login_path

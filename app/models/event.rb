@@ -15,4 +15,8 @@ class Event < ActiveRecord::Base
     time_attr.strftime('%A, %d %b %Y %l:%M %p')
   end
 
+#  def popular_events
+#    popular_ids = EventsUser.order("event_id ASC").limit(5)
+#  end
+
 end

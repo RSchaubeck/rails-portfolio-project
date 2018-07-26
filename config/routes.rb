@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
   get '/events/popular_events'
-  
+
   resources :users
   resources :locations
   resources :events do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations, only: [:show] do
-    resources :events, only: [:show, :index]
+    resources :events, only: [:index, :new]
   end
 
 

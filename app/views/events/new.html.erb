@@ -21,7 +21,7 @@
   <%= f.text_field :name %>
   <br><br>
   <label>Location Name:</label><br>
-  <%= collection_select(:event, :location, Location.all, :id, :capitalized_names, {include_blank: "Select Location"}) %>
+  <%= collection_select(:event, :location, Location.all, :id, :capitalized_names, @loc ? {selected: @loc.name} : {selected: "Select Location"}) %>
   <br><br>
   <label>Start Date & Time:</label><br>
   <%= f.datetime_select(:start, start_year: 2018, ampm: true) %>

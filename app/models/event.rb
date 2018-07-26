@@ -3,11 +3,11 @@ class Event < ActiveRecord::Base
   has_many :events_user
   has_many :users, through: :events_user
   validates :name, presence: true
-  validate :same_time?
+  validate :correct_time?
 
-  def same_time?
-    if self.start == self.end_time
-      errors.add(:start, "time can't be the same as end time.")
+  def correct_time?
+    if self.start >= self.end_time
+      errors.add(:start, "time can't come before or be the same as end time.")
     end
   end
 

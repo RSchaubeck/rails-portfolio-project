@@ -21,13 +21,13 @@
   <%= f.text_field :name %>
   <br><br>
   <label>Location Name:</label><br>
-  <%= collection_select(:event, :location, Location.all, :id, :capitalized_names, @loc ? {selected: @loc.name} : {selected: "Select Location"}) %>
+  <%= f.collection_select(:location_id, Location.all, :id, :capitalized_names, selected: params[:location_id]) %>
   <br><br>
   <label>Start Date & Time:</label><br>
-  <%= f.datetime_select(:start, start_year: 2018, ampm: true) %>
+  <%= f.datetime_select(:start, default: Time.now, ampm: true) %>
   <br><br>
   <label>End Date & Time:</label><br>
-  <%= f.datetime_select(:end_time, start_year: 2018, ampm: true) %>
+  <%= f.datetime_select(:end_time, default: Time.now, ampm: true) %>
   <br><br>
   <%= f.submit %>
 <% end %>

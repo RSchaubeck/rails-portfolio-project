@@ -20,7 +20,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    location = Location.find(params[:event][:location])
+    location = Location.find(params[:event][:location_id].to_i)
     @event = Event.new(event_params)
     @event.location_id = location.id
     if @event.save

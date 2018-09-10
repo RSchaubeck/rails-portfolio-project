@@ -1,6 +1,6 @@
 <h1>Welcome <%=@user.first_name.titleize%>!</h1>
-
+<h2>Your Upcoming Events:</h2>
+<%= render 'events/event_list' %><br>
 <p><%= link_to "Add Location", new_location_path %></p>
 <p><%= link_to "Add Event", new_event_path %></p>
 <p><%= link_to "Log Out", logout_path %></p>
- <%= console %>

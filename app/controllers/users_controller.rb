@@ -22,6 +22,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @events =
+    Event.all.each do |ev|
+      EventsUser.all.each do |e_u|
+        e_u.user_id == @user.id && e_u.event_id == ev.id
+      end
+    end
+    console
   end
 
   private

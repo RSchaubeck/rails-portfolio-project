@@ -1,4 +1,4 @@
-<% if @events %>
+<% if !@events.empty? %>
   <% @events.each do |e| %>
     <h2><%=link_to e.name.titleize, event_path(e) %></h2>
     <ul>

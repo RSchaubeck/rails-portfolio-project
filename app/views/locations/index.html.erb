@@ -1,8 +1,8 @@
-<h1>Locations</h1>
+<h2>Locations</h2>
 
 <% @locations.each do |l| %>
   <div>
-    <h2><%= link_to l.name.titleize, location_events_path(l) %></h2>
+    <h3><%= link_to l.name.titleize, location_events_path(l) %></h3>
     <ul>
       <li><%= l.address %></li>
       <li><%= l.city.titleize %>, <%= l.state.titleize %></li>

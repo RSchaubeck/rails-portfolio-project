@@ -17,10 +17,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .main-head a:link, .main-head a:hover, .main-head a:visited, .main-head a:active {
+ .main-head {
    text-decoration: none;
    color: #535963;
-   font-size: 3.5em;
    font-family: 'League Script', cursive;
    font-weight: bold;
+   font-size: 300%;
+   padding-top: 20px;
+   padding-left: 30px;
+ }
+
+ .nav-element {
+   font-size: 15px;
+   padding-top: 4px;
  }

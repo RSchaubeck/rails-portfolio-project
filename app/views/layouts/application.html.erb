@@ -14,7 +14,12 @@
     <div class='contaier'>
       <div class='row'>
       <div class='nav navbar-default'>
-        <h1 class='navbar-brand main-head'><%= link_to "Event Planner", root_path %></h1>
+        <a href='/' class='navbar-brand main-head'>Event Planner</a>
+        <ul class='nav nav-pills pull-right'>
+          <li class='nav-element'><%= link_to "Events", events_path %></li>
+          <li class='nav-element'><%= link_to "Locations", locations_path %></li>
+          <li class='divider-vertical'></li>
+        </ul>
       </div>
     </div>
     </div>

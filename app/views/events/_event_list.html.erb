@@ -1,6 +1,6 @@
 <% if !@events.empty? %>
   <% @events.each do |e| %>
-    <h2><%=link_to e.name.titleize, event_path(e) %></h2>
+    <h3><%=link_to e.name.titleize, event_path(e) %></h3>
     <ul>
       <li><%= e.readable_time(e.start) %></li>
       <li><%= e.readable_time(e.end_time) %></li>

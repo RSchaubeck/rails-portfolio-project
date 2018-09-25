@@ -1,12 +1,12 @@
 <% console %>
-<h1><%= @event.name.titleize %></h1>
+<h2><%= @event.name.titleize %></h2>
 
-  <h3>Where:</h3>
+  <h4>Where:</h4>
     <ul>
       <li><%= link_to @location.name.titleize, locations_path(@location) %></li>
       <li><%= @location.address %>, <%= @location.city %> - <%= @location.zip_code %></li>
     </ul>
-  <h3>When:</h3>
+  <h4>When:</h4>
     <ul>
       <li><%= @event.readable_time(@event.start) %></li>
       <li><%= @event.readable_time(@event.end_time) %></li>

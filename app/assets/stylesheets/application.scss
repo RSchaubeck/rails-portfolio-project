@@ -16,3 +16,11 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .main-head a:link, .main-head a:hover, .main-head a:visited, .main-head a:active {
+   text-decoration: none;
+   color: #535963;
+   font-size: 3.5em;
+   font-family: 'League Script', cursive;
+   font-weight: bold;
+ }

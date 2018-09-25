@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=League+Script" rel="stylesheet">
   </head>
 
   <body>
+    <div class='contaier'>
+      <div class='row'>
+      <div class='nav navbar-default'>
+        <h1 class='navbar-brand main-head'><%= link_to "Event Planner", root_path %></h1>
+      </div>
+    </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>

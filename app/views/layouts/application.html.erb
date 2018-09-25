@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=League+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -15,10 +16,13 @@
       <div class='row'>
       <div class='nav navbar-default'>
         <a href='/' class='navbar-brand main-head'>Event Planner</a>
-        <ul class='nav nav-pills pull-right'>
+        <ul class='nav nav-pills navbar-static-top pull-right'>
           <li class='nav-element'><%= link_to "Events", events_path %></li>
           <li class='nav-element'><%= link_to "Locations", locations_path %></li>
           <li class='divider-vertical'></li>
+          <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
+          <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
+          <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
         </ul>
       </div>
     </div>

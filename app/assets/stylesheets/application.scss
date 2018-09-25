@@ -31,3 +31,37 @@
    font-size: 15px;
    padding-top: 4px;
  }
+
+ .divider-vertical {
+   height: 50px;
+   margin: 0 9px;
+   border-left: 1px solid #e2e2e2;
+   border-right: 1px solid #FFF;
+ }
+
+ .fa {
+   width: 40px;
+   text-align: center;
+   text-decoration: none;
+   margin: 5px 2px;
+ }
+
+ .fa:hover {
+   opacity: 0.75;
+ }
+
+ .fa-facebook {
+   background: #F8F8F8;
+   color: #3B5998;
+ }
+
+ .fa-twitter {
+   background: #F8F8F8;
+   color: #55ACEE;
+   margin-right: 25px;
+ }
+
+ .fa-instagram {
+   background: #F8F8F8;
+   color: #125688;
+ }

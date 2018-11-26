@@ -1,6 +1,7 @@
 <% console %>
-<h2><%= @event.name.titleize %></h2>
+<h2 class="indent-header"><%= @event.name.titleize %></h2>
 
+<div class="indent-elements">
   <h4>Where:</h4>
     <ul>
       <li><%= link_to @location.name.titleize, locations_path(@location) %></li>
@@ -13,6 +14,7 @@
       <li><%= distance_of_time_in_words(@event.start, @event.end_time).capitalize %></li>
     </ul>
 
-<%= button_to "RSVP", event_rsvp_index_path(@event), data: {confirm: "Are you sure you want to RSVP to #{@event.name.titleize} at #{@location.name.titleize}?"} %>
-<br><br>
-<%= link_to "Return Home", root_path %>
+  <%= button_to "RSVP", event_rsvp_index_path(@event), data: {confirm: "Are you sure you want to RSVP to #{@event.name.titleize} at #{@location.name.titleize}?"} %>
+  <br><br>
+  <%= link_to "Return Home", root_path %>
+</div>

@@ -1,25 +1,27 @@
-<h2>Signup</h2>
+<h2 class="indent-header">Signup</h2>
 
 <font color="red"><%= flash[:notice] %></font>
 
-<%= form_for :user, url: '/users' do |f| %>
-  <label>First Name:</label><br>
-  <%= f.text_field :first_name %>
+<div class="indent-elements">
+  <%= form_for :user, url: '/users' do |f| %>
+    <label>First Name:</label><br>
+    <%= f.text_field :first_name %>
+    <br><br>
+    <label>Last Name:</label><br>
+    <%= f.text_field :last_name %>
+    <br><br>
+    <label>Email</label><br>
+    <%= f.text_field :email %>
+    <br><br>
+    <label>Password:</label><br>
+    <%= f.password_field :password %>
+    <br><br>
+    <label>Confirm Password:</label><br>
+    <%= f.password_field :password_confirmation %>
+    <br><br>
+    <%= f.submit "Sign Up!" %>
+  <% end %>
   <br><br>
-  <label>Last Name:</label><br>
-  <%= f.text_field :last_name %>
-  <br><br>
-  <label>Email</label><br>
-  <%= f.text_field :email %>
-  <br><br>
-  <label>Password:</label><br>
-  <%= f.password_field :password %>
-  <br><br>
-  <label>Confirm Password:</label><br>
-  <%= f.password_field :password_confirmation %>
-  <br><br>
-  <%= f.submit "Sign Up!" %>
-<% end %>
-<br><br>
-<p>Already have an account? <%= link_to "Log In", login_path %></p>
-<p><%= link_to "Return Home", root_path %></p>
+  <p>Already have an account? <%= link_to "Log In", login_path %></p>
+  <p><%= link_to "Return Home", root_path %></p>
+</div>

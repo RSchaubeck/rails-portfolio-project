@@ -1,11 +1,13 @@
-<h2>Locations</h2>
+<h2 class="indent-header">Locations</h2>
 
-<% @locations.each do |l| %>
-  <div>
-    <h3><%= link_to l.name.titleize, location_events_path(l) %></h3>
-    <ul>
-      <li><%= l.address %></li>
-      <li><%= l.city.titleize %>, <%= l.state.titleize %></li>
-    </ul>
-  </div>
-<% end %>
+<div class="indent-elements">
+  <% @locations.each do |l| %>
+    <div>
+      <h3><%= link_to l.name.titleize, location_events_path(l) %></h3>
+      <ul>
+        <li><%= l.address %></li>
+        <li><%= l.city.titleize %>, <%= l.state.titleize %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

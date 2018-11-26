@@ -1,4 +1,4 @@
-<h2>Add Event</h2>
+<h2 class="indent-header">Add Event</h2>
 
 <% if @event.errors.any? %>
   <div id="error_explanation">
@@ -16,20 +16,22 @@
 
 <font color="red"><%= flash[:alert] %></font><br>
 
-<%= form_for :event, url: '/events' do |f| %>
-  <label>Name:</label><br>
-  <%= f.text_field :name %>
+<div class="indent-elements">
+  <%= form_for :event, url: '/events' do |f| %>
+    <label>Name:</label><br>
+    <%= f.text_field :name %>
+    <br><br>
+    <label>Location Name:</label><br>
+    <%= f.collection_select(:location_id, Location.all, :id, :capitalized_names, selected: params[:location_id]) %>
+    <br><br>
+    <label>Start Date & Time:</label><br>
+    <%= f.datetime_select(:start, default: Time.now, ampm: true) %>
+    <br><br>
+    <label>End Date & Time:</label><br>
+    <%= f.datetime_select(:end_time, default: Time.now, ampm: true) %>
+    <br><br>
+    <%= f.submit %>
+  <% end %>
   <br><br>
-  <label>Location Name:</label><br>
-  <%= f.collection_select(:location_id, Location.all, :id, :capitalized_names, selected: params[:location_id]) %>
-  <br><br>
-  <label>Start Date & Time:</label><br>
-  <%= f.datetime_select(:start, default: Time.now, ampm: true) %>
-  <br><br>
-  <label>End Date & Time:</label><br>
-  <%= f.datetime_select(:end_time, default: Time.now, ampm: true) %>
-  <br><br>
-  <%= f.submit %>
-<% end %>
-<br><br>
-<p>If your event's location is not listed, please add it <%= link_to "here", new_location_path %> first</p>
+  <p>If your event's location is not listed, please add it <%= link_to "here", new_location_path %> first</p>
+</div>

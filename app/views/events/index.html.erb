@@ -1,7 +1,9 @@
- <h2>Events</h2>
+ <h2 class="indent-header">Events</h2>
 
 <%= render 'event_list' %>
 
 <br>
-<%= link_to "Add New Event", new_event_path %> <br><br>
-<%= link_to "Popular Events", events_popular_events_path %>
+<div class="indent-elements">
+  <%= link_to "Add New Event", new_event_path %> <br><br>
+  <%= link_to "Popular Events", events_popular_events_path %>
+</div>

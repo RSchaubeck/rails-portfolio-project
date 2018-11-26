@@ -1,9 +1,12 @@
-<h2><%= @location.name.titleize %></h2>
-<p><%= @location.address %>. <%= @location.city.titleize %>, <%= @location.state.titleize %></p>
-<ul>
-  <%= @location.events.each do |e| %>
-    <li><%= link_to e.name, location_event_path(@location, e) %></li>
-  <% end %>
-</ul>
+<h2 class="indent-header"><%= @location.name.titleize %></h2>
 
-<%= link_to "Add events for this location", new_location_event_path(@location) %>
+<div class="indent-elements">
+  <p><%= @location.address %>. <%= @location.city.titleize %>, <%= @location.state.titleize %></p>
+  <ul>
+    <%= @location.events.each do |e| %>
+      <li><%= link_to e.name, location_event_path(@location, e) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add events for this location", new_location_event_path(@location) %>
+</div>

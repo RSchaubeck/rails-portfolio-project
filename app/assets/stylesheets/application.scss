@@ -17,6 +17,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+//navbar stylings
+
  .main-head {
    text-decoration: none;
    color: #535963;
@@ -65,3 +67,13 @@
    background: #F8F8F8;
    color: #125688;
  }
+
+//indentation for all headers and elements
+
+.indent-header {
+  margin-left: 20px;
+}
+
+.indent-elements {
+  margin-left: 27px;
+}

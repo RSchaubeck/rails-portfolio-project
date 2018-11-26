@@ -1,18 +1,19 @@
-<h2>Log In</h2>
+<h2 class="indent-header">Log In</h2>
 
 <font color="red"><%= flash[:notice] %></font>
 
 <br><br>
-
-<%= form_for :user, url: '/login' do |f| %>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %>
+<div class="indent-elements">
+  <%= form_for :user, url: '/login' do |f| %>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+    <br><br>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+    <br><br>
+    <%= f.submit "Log In" %>
+  <% end %>
   <br><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %>
-  <br><br>
-  <%= f.submit "Log In" %>
-<% end %>
-<br><br>
-<p>Don't have an account? <%= link_to "Sign Up", new_user_path %></p>
-<p><%= link_to "Return Home", root_path %></p>
+  <p>Don't have an account? <%= link_to "Sign Up", new_user_path %></p>
+  <p><%= link_to "Return Home", root_path %></p>
+</div>

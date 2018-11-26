@@ -1,5 +1,8 @@
-<h2>Welcome <%=@user.first_name.titleize%>!</h2>
-<h3>Your Upcoming Events:</h3>
-<%= render 'events/event_list' %><br>
-<p><%= link_to "Add Location", new_location_path %>
-<p><%= link_to "Add Event", new_event_path %>
+<h2 class="indent-header">Welcome <%=@user.first_name.titleize%>!</h2>
+
+<div class="indent-elements">
+  <h3>Your Upcoming Events:</h3>
+  <%= render 'events/event_list' %><br>
+  <p><%= link_to "Add Location", new_location_path %>
+  <p><%= link_to "Add Event", new_event_path %>
+</div>
